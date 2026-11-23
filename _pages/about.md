@@ -2,33 +2,31 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Motto. Etc.
+subtitle: Electrical Engineer at Melbourne Space Laboratory · Avionics Lead, ARES Rocketry
 
 profile:
   align: right
   image: prof_pic.jpg
-  image_circular: false # crops the image to make it circular
+  image_circular: false
   more_info: >
-    <p>555 your office number</p>
-    <p>123 your address street</p>
-    <p>Your City, State 12345</p>
+    <p>Melbourne, Australia</p>
 
-selected_papers: true # includes a list of papers marked as "selected={true}"
-social: true # includes social icons at the bottom of the page
+selected_papers: false
+social: true
 
 announcements:
-  enabled: true # includes a list of news items
-  scrollable: true # adds a vertical scroll bar if there are more than 3 news items
-  limit: 5 # leave blank to include all the news in the `_news` folder
+  enabled: false
 
 latest_posts:
-  enabled: true
-  scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
-  limit: 3 # leave blank to include all the blog posts
+  enabled: false
 ---
 
-Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](https://www.reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
+I'm an electrical engineering student at the [University of Melbourne](https://www.unimelb.edu.au/), where my studies focus on electronics and embedded systems. I currently work as an electrical engineer at [Melbourne Space Laboratory](https://melbournespace.research.unimelb.edu.au/), and I lead On-Rocket Avionics for [ARES](https://www.instagram.com/aresunimelb/), the University of Melbourne's student rocketry team.
 
-Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
+**Melbourne Space Laboratory.** My work focuses on the thermal management system for [Roo-ver](https://elo2.au/), Australia's first lunar rover. The role has given me industry experience and exposure to professional engineering practices and workflows.
 
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+**Rocketry.** As Avionics Lead at ARES, I oversee all decisions on architecture, behaviour, system-level design, power, and communications. My main contribution has been the Power Management Board (PMB), a four-layer power management and distribution board that powers all on-rocket electronics for Project Odyssey, ARES' first hybrid rocket. The PMB has taken me through the full engineering design process: requirements, initial design, review, bring-up, firmware, and a second revision. Firmware development and validation for v2.0 is under way and due to finish over the summer.
+
+**Other projects.** I've also worked on the hybrid control systems for the ARES Genesis engine, several iterations of a servo-driven mechanical arm, and an ASK-modulation communications system. Some of these are detailed on my [projects](/projects/) page.
+
+Feel free to get in touch. You can reach me by email or on [LinkedIn](https://www.linkedin.com/in/stanley-whineray-1323872b9).
