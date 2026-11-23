@@ -4,7 +4,7 @@ title: Arduino / ESP32 Mechanical Arm
 description: Iteratively designed Servo-Based Mechanical Arm
 img:
 importance: 2
-category: Personal / Rocketry
+category: work
 ---
 
 Every project has a beautiful feature showcase page.

@@ -2,7 +2,7 @@
 layout: page
 title: Projects
 permalink: /projects/
-description: A collection of my documented projects.
+description: A collection of my documented projects - more detail to come.
 nav: true
 nav_order: 3
 display_categories: [Personal / Rocketry, University]

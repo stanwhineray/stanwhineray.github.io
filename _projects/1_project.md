@@ -1,81 +1,59 @@
 ---
 layout: page
-title: Power Management Board (PMB) v1.0
-description: Power Management and Distribution PCB for Rocket-Avionics Systems
-img: assets/img/PMB-v1-Front.png
+title: Power Management System
+description: v1.0 & v2.0 for ARES Rocketry's Project Odyssey
+img: assets/img/PMB-v2-Front.png
 importance: 1
 category: Personal / Rocketry
-related_publications: true
+related_publications: false
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
-
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
-
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
+The Power Management System (PMS) is a 4-layer PCB that powers the avionics stack on ARES Rocketry's Project Odyssey. It steps a 2–4S LiPo battery down to the rails the flight electronics need and supplies a 6A avionics stack, including pyro events. The board is tightly size, weight and power (SWaP) constrained. I designed the board, debugged the v1.0 bring-up, and carried the fixes into v2.0.
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/PMB-v2-Front.png" title="PMS v2.0 front" class="img-fluid rounded z-depth-1" %}
     </div>
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/PMB-v2-Back.png" title="PMS v2.0 back" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
+    Power Management System v2.0, front and back.
 </div>
+
+## Design
+
+- **Battery monitoring:** an INA229 (20-bit, SPI) measures battery voltage and current.
+- **Launch switchover:** a TPS2121 power mux switches over automatically at launch on the 20V, 6A system, configured using a Zener diode.
+- **Regulation:** the 5V and 3.3V rails moved from an MP28167 and TPS62160 in v1.0 to a TPS55285 and TLVM13640 in v2.0 for higher current capacity.
+- **Usability:** v2.0 added output switching, mux-bypass and reset jumpers, power-good LEDs, USB-C programming and spare GPIOs.
+
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid path="assets/img/PMB-v2-3DModel.png" title="PMS v2.0 3D model" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
-    This image can also have a caption. It's like magic.
+    3D model of v2.0.
 </div>
 
-You can also put regular text between your rows of images, even citations {% cite einstein1950meaning %}.
-Say you wanted to write a bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, _bled_ for your project, and then... you reveal its glory in the next row of images.
+## v1.0 bring-up and fixes
 
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+Bring-up of v1.0 hit over-current faults. I traced them to inrush current caused by insufficient soft-start capacitance, and v2.0 fixes this. v1.0 also had a pin-mapping error on the SPI lines. I worked around it with PIO-based SPI so the board could still be tested, then restored the hardware SPI pinout in v2.0.
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid path="assets/img/PMB-v1-Front.png" title="PMS v1.0 front" class="img-fluid rounded z-depth-1" %}
     </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid path="assets/img/PMB-v1-3DModel.png" title="PMS v1.0 3D model" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
+    Power Management System v1.0: the assembled board and its 3D model.
 </div>
 
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
+## Documentation
 
-{% raw %}
-
-```html
-<div class="row justify-content-sm-center">
-  <div class="col-sm-8 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-  <div class="col-sm-4 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-</div>
-```
-
-{% endraw %}
+I wrote a 7,000-word design report covering topology selection, subsystem design and an FMEA. It's now the standard for design reports at ARES.

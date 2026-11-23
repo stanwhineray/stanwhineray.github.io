@@ -4,16 +4,13 @@ title: PMB v2.0 (Power Management Board)
 description: Refined Power Management and Distribution PCB for Rocket-Avionics Systems
 img: assets/img/PMB-v2-Front.png
 importance: 1
-category: Personal / Rocketry
+category: work
 giscus_comments: true
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+The second version of the Power Management Board is intended to solve the key problems found during the bring up of v1.0, as well as add iterative improvements to its function.
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
-
+Key issues fou
     ---
     layout: page
     title: project
