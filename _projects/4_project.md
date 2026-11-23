@@ -1,10 +1,10 @@
 ---
 layout: page
-title: project 4
-description: another without an image
+title: Arduino / ESP32 Mechanical Arm
+description: Iteratively designed Servo-Based Mechanical Arm
 img:
-importance: 3
-category: fun
+importance: 2
+category: Personal / Rocketry
 ---
 
 Every project has a beautiful feature showcase page.
